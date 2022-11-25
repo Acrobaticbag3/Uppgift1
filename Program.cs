@@ -1,34 +1,31 @@
 ﻿using System;
+using System.Timers;
 
 namespace Uppgift1 {
     class program {
+        private static System.Timers.Timer aTimer;
+
         public static void Main(string[] args) {
             int morötterStart = 40;
-            
-            int tidEtt;
-            int tidTvå;
 
-            int morötterÄtna = 0;
+            int morötterÄtnaFörTor = 0;
+            int morötterÄtnaFörMor = 0;
             int timmer = 0;
 
             Console.Write(value: "Hur lång tid tar Tor på sig att äta en morot: ");
-            tidEtt = Convert.ToInt32(value: Console.ReadLine());
+            int tidEtt = Convert.ToInt32(value: Console.ReadLine());
 
             Console.Write(value: "Hur lång tid tar Mor på sig att äta en morot: ");
-            tidTvå = Convert.ToInt32(value: Console.ReadLine());
+            int tidTvå = Convert.ToInt32(value: Console.ReadLine());
 
-            for (int i = 0; i < morötterStart; i++) {
-                Console.WriteLine("1work");
-                for (int i2 = 0; i2 < tidEtt; i2++) {
-                    Console.WriteLine("2work");
-                    if (i2 == tidEtt && morötterStart != 0) {
-                        Console.WriteLine("3work");
-                        morötterÄtna++;
-                    }
+            while (morötterStart != 0) {
+                for (int i = 0; i < tidEtt; i++) {
+                    morötterÄtnaFörTor++;
                 }
             }
 
-            Console.WriteLine(value: "Tor åt: " + morötterÄtna + " morötter");        
+            Console.WriteLine(value: "Tor åt: " + morötterÄtnaFörTor + " morötter");
+            Console.WriteLine(value: "Mor åt: " + morötterÄtnaFörMor + " morötter");        
         }   
     }
 }
