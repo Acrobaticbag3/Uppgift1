@@ -4,11 +4,9 @@ namespace Uppgift1 {
     class program {
         public static void Main(string[] args) {
             int morötterStart = 40;
-            int time = 1000;
 
             int timerOne = 0;
             int timerTwo = 0;
-
             int timerReset = 0;
 
             int morötterÄtnaFörTor = 0;
@@ -21,7 +19,7 @@ namespace Uppgift1 {
             int tidTvå = Convert.ToInt32(value: Console.ReadLine());
 
            
-                for (int i = 0; i < time; i++) {
+                while (morötterStart != 0) {
                     if (timerOne == tidEtt && morötterStart != 0) {
 
                         morötterÄtnaFörTor++;
@@ -41,7 +39,6 @@ namespace Uppgift1 {
 
                     }
                 }
-                
 
             Console.WriteLine(value: "Tor åt: " + morötterÄtnaFörTor + " morötter");
             Console.WriteLine(value: "Mor åt: " + morötterÄtnaFörMor + " morötter");        
