@@ -17,12 +17,14 @@ namespace Uppgift1 {
             Console.Write(value: "Hur lång tid tar Mor på sig att äta en morot: ");
             tidTvå = Convert.ToInt32(value: Console.ReadLine());
 
-            while (morötterStart > 0) {
-                morötterStart--;
-                for (int i = 0; i < tidEtt; i++) {
-                    timmer++;
-                    morötterÄtna++;
-                    morötterStart =- tidEtt;
+            for (int i = 0; i < morötterStart; i++) {
+                Console.WriteLine("1work");
+                for (int i2 = 0; i2 < tidEtt; i2++) {
+                    Console.WriteLine("2work");
+                    if (i2 == tidEtt && morötterStart != 0) {
+                        Console.WriteLine("3work");
+                        morötterÄtna++;
+                    }
                 }
             }
 
