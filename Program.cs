@@ -23,11 +23,13 @@ namespace Uppgift1 {
                     if (timerOne == tidEtt) {
 
                         morötterÄtnaFörTor++;
+                        morötterStart--;
                         timerOne =- tidEtt;
 
                     } else if (timerTwo == tidTvå) {
 
                         morötterÄtnaFörMor++;
+                        morötterStart--;
                         timerOne =- tidTvå;
 
                     } else {
