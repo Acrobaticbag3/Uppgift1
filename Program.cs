@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Timers;
 
 namespace Uppgift1 {
     class program {
-        private static System.Timers.Timer aTimer;
-
         public static void Main(string[] args) {
             int morötterStart = 40;
 
@@ -19,9 +16,15 @@ namespace Uppgift1 {
             int tidTvå = Convert.ToInt32(value: Console.ReadLine());
 
             while (morötterStart != 0) {
-                for (int i = 0; i < tidEtt; i++) {
-                    morötterÄtnaFörTor++;
+                for (int i = 0; i < tidEtt + 1; i++) {
+                    if (i == tidEtt && morötterStart != 0) {
+                        Console.WriteLine("CALUCLATING");
+                        morötterÄtnaFörTor++;
+                        i =- tidEtt + 1;
+                        morötterStart--;
+                    }
                 }
+                morötterStart--;
             }
 
             Console.WriteLine(value: "Tor åt: " + morötterÄtnaFörTor + " morötter");
