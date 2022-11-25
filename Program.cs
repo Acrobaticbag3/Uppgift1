@@ -4,10 +4,12 @@ namespace Uppgift1 {
     class program {
         public static void Main(string[] args) {
             int morötterStart = 40;
-            int time = 100;
+            int time = 1000;
 
             int timerOne = 0;
             int timerTwo = 0;
+
+            int timerReset = 0;
 
             int morötterÄtnaFörTor = 0;
             int morötterÄtnaFörMor = 0;
@@ -18,25 +20,28 @@ namespace Uppgift1 {
             Console.Write(value: "Hur lång tid tar Mor på sig att äta en morot: ");
             int tidTvå = Convert.ToInt32(value: Console.ReadLine());
 
-            while (morötterStart != 0)
+           
                 for (int i = 0; i < time; i++) {
-                    if (timerOne == tidEtt) {
+                    if (timerOne == tidEtt && morötterStart != 0) {
 
                         morötterÄtnaFörTor++;
                         morötterStart--;
-                        timerOne =- tidEtt;
+                        timerOne = timerReset;
 
-                    } else if (timerTwo == tidTvå) {
+                    } else if (timerTwo == tidTvå  && morötterStart != 0) {
 
                         morötterÄtnaFörMor++;
                         morötterStart--;
-                        timerOne =- tidTvå;
+                        timerTwo = timerReset;
 
                     } else {
+
                         timerOne++; 
                         timerTwo++; 
+
                     }
                 }
+                
 
             Console.WriteLine(value: "Tor åt: " + morötterÄtnaFörTor + " morötter");
             Console.WriteLine(value: "Mor åt: " + morötterÄtnaFörMor + " morötter");        
